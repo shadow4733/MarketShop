@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5303207b-d597-4ae4-aad1-023d5038a9bc" name="Changes" comment="initial">
-      <change afterPath="$PROJECT_DIR$/cmd/api-gateway/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/auth-service/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/auth-service/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/auth-service/cmd/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/cart-service/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/inventory-service/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/notification-service/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/order-service/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/product-service/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/user-service/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/auth-service/main.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/cmd/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +73,7 @@
       <recent name="$PROJECT_DIR$/cmd/inventory-service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cmd/user-service/cmd" />
       <recent name="$PROJECT_DIR$/cmd/api-gateway" />
       <recent name="$PROJECT_DIR$/cmd" />
     </key>
