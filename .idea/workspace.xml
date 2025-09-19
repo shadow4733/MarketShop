@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5303207b-d597-4ae4-aad1-023d5038a9bc" name="Changes" comment="initial">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/cmd/main.go" afterDir="false" />
-    </list>
+    <list default="true" id="5303207b-d597-4ae4-aad1-023d5038a9bc" name="Changes" comment="added user model and create table" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -135,7 +131,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial" />
+    <MESSAGE value="added user model and create table" />
+    <option name="LAST_COMMIT_MESSAGE" value="added user model and create table" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
