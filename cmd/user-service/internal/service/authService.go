@@ -1,0 +1,109 @@
+package service
+
+import (
+	"errors"
+	"fmt"
+	"github.com/google/uuid"
+	"time"
+	"user-service/internal/dto/request"
+	"user-service/internal/dto/response"
+
+	"user-service/internal/model"
+	"user-service/internal/repository"
+
+	"github.com/golang-jwt/jwt/v4"
+	"golang.org/x/crypto/bcrypt"
+	"gorm.io/gorm"
+)
+
+type AuthService struct {
+	userRepo  *repository.UserRepository
+	jwtSecret string
+}
+
+func NewAuthService(db *gorm.DB, jwtSecret string) *AuthService {
+	userRepo := repository.NewUserRepository(db)
+	return &AuthService{
+		userRepo:  userRepo,
+		jwtSecret: jwtSecret,
+	}
+}
+
+func (s *AuthService) RegisterUser(req request.RegisterRequest) (*response.RegisterResponse, error) {
+	emailExists, err := s.userRepo.EmailExists(req.Email)
+	if err != nil {
+		return nil, fmt.Errorf("ошибка проверки email: %w", err)
+	}
+	if emailExists {
+		return nil, errors.New("пользователь с таким email уже существует")
+	}
+
+	usernameExists, err := s.userRepo.UsernameExists(req.Username)
+	if err != nil {
+		return nil, fmt.Errorf("ошибка проверки username: %w", err)
+	}
+	if usernameExists {
+		return nil, errors.New("пользователь с таким username уже существует")
+	}
+
+	passwordHash, err := bcrypt.GenerateFromPassword([]byte(req.Password), bcrypt.DefaultCost)
+	if err != nil {
+		return nil, fmt.Errorf("ошибка хеширования пароля: %w", err)
+	}
+
+	now := time.Now()
+	user := &model.User{
+		ID:           uuid.New(),
+		Username:     req.Username,
+		Email:        req.Email,
+		PasswordHash: string(passwordHash),
+		Phone:        req.Phone,
+		FirstName:    req.FirstName,
+		LastName:     req.LastName,
+		Country:      req.Country,
+		City:         req.City,
+		IsActive:     true,
+		CreatedAt:    now,
+		UpdatedAt:    now,
+	}
+
+	if err := s.userRepo.Create(user); err != nil {
+		return nil, fmt.Errorf("ошибка создания пользователя: %w", err)
+	}
+
+	token, err := s.generateToken(user)
+	if err != nil {
+		return nil, fmt.Errorf("ошибка генерации токена: %w", err)
+	}
+
+	return &response.RegisterResponse{
+		UserID:    user.ID.String(),
+		Username:  user.Username,
+		Email:     user.Email,
+		FirstName: user.FirstName,
+		LastName:  user.LastName,
+		CreatedAt: user.CreatedAt,
+		Token:     token,
+	}, nil
+}
+
+func (s *AuthService) generateToken(user *model.User) (string, error) {
+	claims := jwt.MapClaims{
+		"user_id": user.ID.String(),
+		"email":   user.Email,
+		"exp":     time.Now().Add(time.Hour * 24 * 7).Unix(),
+		"iat":     time.Now().Unix(),
+	}
+
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
+	return token.SignedString([]byte(s.jwtSecret))
+}
+
+func (s *AuthService) ValidateToken(tokenString string) (*jwt.Token, error) {
+	return jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
+		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
+			return nil, fmt.Errorf("неожиданный метод подписи: %v", token.Header["alg"])
+		}
+		return []byte(s.jwtSecret), nil
+	})
+}

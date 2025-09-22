@@ -11,5 +11,4 @@ WORKDIR /app/cmd
 
 RUN go mod tidy && go build -o /app/myapp .
 
-# Указываем команду для запуска приложения
 CMD ["/app/myapp"]
