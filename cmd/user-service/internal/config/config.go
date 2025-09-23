@@ -1,7 +1,6 @@
 package config
 
 import (
-	"log"
 	"os"
 )
 
@@ -11,14 +10,13 @@ type AppConfig struct {
 
 func NewAppConfig() *AppConfig {
 	return &AppConfig{
-		Port: getEnvPort("APP_PORT"),
+		Port: getEnvPort("APP_PORT", "8080"),
 	}
 }
 
-func getEnvPort(key string) string {
-	value, exists := os.LookupEnv(key)
-	if !exists {
-		log.Fatalf("Необходимо установить переменную окружения: %s", key)
+func getEnvPort(key, defaultValue string) string {
+	if value, exists := os.LookupEnv(key); exists && value != "" {
+		return value
 	}
-	return value
+	return defaultValue
 }
