@@ -2,12 +2,10 @@ package config
 
 import (
 	"fmt"
-	"log"
-	"os"
-	"user-service/internal/model"
-
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
+	"log"
+	"os"
 )
 
 var DB *gorm.DB
@@ -39,10 +37,6 @@ func InitDB() {
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
 		log.Fatalf("Не удалось подключиться к базе: %v", err)
-	}
-
-	if err := db.AutoMigrate(&model.User{}); err != nil {
-		log.Fatalf("Ошибка миграции: %v", err)
 	}
 
 	DB = db

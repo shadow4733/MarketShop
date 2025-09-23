@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   user-service:
     build:
@@ -12,10 +14,11 @@ services:
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
       DB_NAME: ${DB_NAME}
+      DB_SSLMODE: ${DB_SSLMODE}
     depends_on:
-      - db-user-service
+      - user-service-db
 
-  db-user-service:
+  user-service-db:
     image: postgres:latest
     container_name: user-service-db
     environment:

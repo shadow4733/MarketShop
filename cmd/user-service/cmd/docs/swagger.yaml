@@ -1,0 +1,20 @@
+basePath: /api/v1
+host: localhost:8080
+info:
+  contact:
+    email: support@userservice.com
+    name: API Support
+  description: REST API для сервиса пользователей с аутентификацией JWT
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  title: User Service API
+  version: "1.0"
+paths: {}
+securityDefinitions:
+  BearerAuth:
+    description: 'JWT токен в формате: "Bearer {token}"'
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

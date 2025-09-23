@@ -11,7 +11,6 @@ import (
 	"user-service/internal/model"
 	"user-service/internal/repository"
 
-	"github.com/golang-jwt/jwt/v4"
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
 )
@@ -21,11 +20,10 @@ type AuthService struct {
 	jwtSecret string
 }
 
-func NewAuthService(db *gorm.DB, jwtSecret string) *AuthService {
+func NewAuthService(db *gorm.DB) *AuthService {
 	userRepo := repository.NewUserRepository(db)
 	return &AuthService{
-		userRepo:  userRepo,
-		jwtSecret: jwtSecret,
+		userRepo: userRepo,
 	}
 }
 
@@ -71,11 +69,6 @@ func (s *AuthService) RegisterUser(req request.RegisterRequest) (*response.Regis
 		return nil, fmt.Errorf("ошибка создания пользователя: %w", err)
 	}
 
-	token, err := s.generateToken(user)
-	if err != nil {
-		return nil, fmt.Errorf("ошибка генерации токена: %w", err)
-	}
-
 	return &response.RegisterResponse{
 		UserID:    user.ID.String(),
 		Username:  user.Username,
@@ -83,27 +76,5 @@ func (s *AuthService) RegisterUser(req request.RegisterRequest) (*response.Regis
 		FirstName: user.FirstName,
 		LastName:  user.LastName,
 		CreatedAt: user.CreatedAt,
-		Token:     token,
 	}, nil
-}
-
-func (s *AuthService) generateToken(user *model.User) (string, error) {
-	claims := jwt.MapClaims{
-		"user_id": user.ID.String(),
-		"email":   user.Email,
-		"exp":     time.Now().Add(time.Hour * 24 * 7).Unix(),
-		"iat":     time.Now().Unix(),
-	}
-
-	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
-	return token.SignedString([]byte(s.jwtSecret))
-}
-
-func (s *AuthService) ValidateToken(tokenString string) (*jwt.Token, error) {
-	return jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
-		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
-			return nil, fmt.Errorf("неожиданный метод подписи: %v", token.Header["alg"])
-		}
-		return []byte(s.jwtSecret), nil
-	})
 }
