@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5303207b-d597-4ae4-aad1-023d5038a9bc" name="Changes" comment="created registration">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/cmd/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/config/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/config/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/config/db.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/dto/request/userRequest.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/dto/request/authRequest.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/dto/response/userResponse.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/dto/response/authResponse.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/migrations/20250919163241_create_users_table.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/service/authService.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/service/authService.go" afterDir="false" />
-    </list>
+    <list default="true" id="5303207b-d597-4ae4-aad1-023d5038a9bc" name="Changes" comment="created registration and docs(swagger)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -161,7 +145,8 @@
     <MESSAGE value="initial" />
     <MESSAGE value="added user model and create table" />
     <MESSAGE value="created registration" />
-    <option name="LAST_COMMIT_MESSAGE" value="created registration" />
+    <MESSAGE value="created registration and docs(swagger)" />
+    <option name="LAST_COMMIT_MESSAGE" value="created registration and docs(swagger)" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
