@@ -5,7 +5,7 @@ import (
 	"user-service/internal/config"
 	"user-service/internal/handler"
 	"user-service/internal/router"
-	"user-service/internal/service"
+	"user-service/internal/service/impl"
 
 	_ "user-service/cmd/docs"
 )
@@ -27,7 +27,7 @@ func main() {
 	config.InitDB()
 	appCfg := config.NewAppConfig()
 
-	authService := service.NewAuthService(config.DB)
+	authService := impl.NewAuthService(config.DB)
 	authHandler := handler.NewAuthHandler(authService)
 	ginRouter := router.SetupRouter(authHandler)
 

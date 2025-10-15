@@ -1,33 +1,36 @@
-package service
+package impl
 
 import (
 	"errors"
 	"fmt"
-	"github.com/google/uuid"
 	"time"
+
+	"github.com/google/uuid"
 	"user-service/internal/dto/request"
 	"user-service/internal/dto/response"
-
 	"user-service/internal/model"
 	"user-service/internal/repository"
+	"user-service/internal/service"
 
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
 )
 
-type AuthService struct {
+// AuthServiceImpl реализует service.AuthService
+type AuthServiceImpl struct {
 	userRepo  *repository.UserRepository
 	jwtSecret string
 }
 
-func NewAuthService(db *gorm.DB) *AuthService {
+func NewAuthService(db *gorm.DB) service.AuthService {
 	userRepo := repository.NewUserRepository(db)
-	return &AuthService{
+	return &AuthServiceImpl{
 		userRepo: userRepo,
 	}
 }
 
-func (s *AuthService) RegisterUser(req request.RegisterRequest) (*response.RegisterResponse, error) {
+func (s *AuthServiceImpl) Authorization(req request.RegisterRequest) (*response.RegisterResponse, error) {
+	// существующая реализация...
 	emailExists, err := s.userRepo.EmailExists(req.Email)
 	if err != nil {
 		return nil, fmt.Errorf("ошибка проверки email: %w", err)

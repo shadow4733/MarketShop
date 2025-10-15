@@ -10,19 +10,19 @@ import (
 )
 
 type AuthHandler struct {
-	authService *service.AuthService
+	authService service.AuthService
 }
 
 // NewAuthHandler создает новый экземпляр AuthHandler
 // @Summary Создает обработчик аутентификации
 // @Description Инициализирует обработчик с сервисом аутентификации
-func NewAuthHandler(authService *service.AuthService) *AuthHandler {
+func NewAuthHandler(authService service.AuthService) *AuthHandler {
 	return &AuthHandler{
 		authService: authService,
 	}
 }
 
-// Register обрабатывает запрос на регистрацию пользователя
+// Authorization обрабатывает запрос на регистрацию пользователя
 // @Summary Регистрация пользователя
 // @Description Создает нового пользователя и возвращает JWT токен
 // @Tags auth
@@ -34,7 +34,7 @@ func NewAuthHandler(authService *service.AuthService) *AuthHandler {
 // @Failure 409 {object} response.ErrorResponse "Пользователь уже существует"
 // @Failure 500 {object} response.ErrorResponse "Внутренняя ошибка сервера"
 // @Router /auth/register [post]
-func (h *AuthHandler) Register(c *gin.Context) {
+func (h *AuthHandler) Authorization(c *gin.Context) {
 	var req request.RegisterRequest
 
 	if err := c.ShouldBindJSON(&req); err != nil {
@@ -45,7 +45,7 @@ func (h *AuthHandler) Register(c *gin.Context) {
 		return
 	}
 
-	result, err := h.authService.RegisterUser(req)
+	result, err := h.authService.Authorization(req)
 	if err != nil {
 		statusCode := http.StatusInternalServerError
 		if err.Error() == "пользователь с таким email уже существует" ||
