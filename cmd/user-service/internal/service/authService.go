@@ -66,6 +66,7 @@ func (s *AuthService) RegisterUser(req request.RegisterRequest) (*response.Regis
 	}
 
 	fmt.Println("gdfgdf")
+	fmt.Println("gdfgdf")
 
 	if err := s.userRepo.Create(user); err != nil {
 		return nil, fmt.Errorf("ошибка создания пользователя: %w", err)
