@@ -24,9 +24,9 @@ func main() {
 	config.InitDB()
 	appCfg := config.NewAppConfig()
 
-	authService := impl.NewAuthService(config.DB)
-	authHandler := handler.NewAuthHandler(authService)
-	ginRouter := router.SetupRouter(authHandler)
+	userService := impl.NewUserServiceImpl(config.DB)
+	userHandler := handler.NewUserHandler(userService)
+	ginRouter := router.SetupRouter(userHandler)
 
 	port := appCfg.Port
 

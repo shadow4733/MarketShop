@@ -4,30 +4,27 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5303207b-d597-4ae4-aad1-023d5038a9bc" name="Changes" comment="added intefaces for service">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0ebd6de9-09da-4205-a576-c0b0524eea90.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0ebd6de9-09da-4205-a576-c0b0524eea90/storage_v2/_src_/database/user-service.s5o4hw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0ebd6de9-09da-4205-a576-c0b0524eea90/storage_v2/_src_/database/user-service.s5o4hw/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0ebd6de9-09da-4205-a576-c0b0524eea90/storage_v2/_src_/database/user-service.s5o4hw/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0ebd6de9-09da-4205-a576-c0b0524eea90/storage_v2/_src_/database/user-service.s5o4hw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0ebd6de9-09da-4205-a576-c0b0524eea90/storage_v2/_src_/database/user-service.s5o4hw/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0ebd6de9-09da-4205-a576-c0b0524eea90/storage_v2/_src_/database/user-service.s5o4hw/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/68ed6308-bf92-4644-9e00-26e6f87203f7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/68ed6308-bf92-4644-9e00-26e6f87203f7/storage_v2/_src_/database/user-service.s5o4hw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/68ed6308-bf92-4644-9e00-26e6f87203f7/storage_v2/_src_/database/user-service.s5o4hw/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/68ed6308-bf92-4644-9e00-26e6f87203f7/storage_v2/_src_/database/user-service.s5o4hw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/68ed6308-bf92-4644-9e00-26e6f87203f7/storage_v2/_src_/database/user-service.s5o4hw/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/eafcce52-1a2b-4e9c-bd17-bef343dcdae1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/eafcce52-1a2b-4e9c-bd17-bef343dcdae1/storage_v2/_src_/database/user-service.s5o4hw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/eafcce52-1a2b-4e9c-bd17-bef343dcdae1/storage_v2/_src_/database/user-service.s5o4hw/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/eafcce52-1a2b-4e9c-bd17-bef343dcdae1/storage_v2/_src_/database/user-service.s5o4hw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/eafcce52-1a2b-4e9c-bd17-bef343dcdae1/storage_v2/_src_/database/user-service.s5o4hw/schema/public.abK9xQ.meta" beforeDir="false" />
+    <list default="true" id="5303207b-d597-4ae4-aad1-023d5038a9bc" name="Changes" comment="refactor">
+      <change afterPath="$PROJECT_DIR$/cmd/user-service/internal/repository/auth_repository.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmd/user-service/internal/service/impl/user_service_impl.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9a54d25a-0bb7-4a5d-a498-b4460b4385ae.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9a54d25a-0bb7-4a5d-a498-b4460b4385ae.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/user-service/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/cmd/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/handler/authHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/handler/authHandler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/router/authRouter.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/router/authRouter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/service/authService.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/service/impl/authService.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/service/userService.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/service/impl/userService.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/user-service/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/dto/request/authRequest.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/dto/request/auth_request.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/dto/response/authResponse.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/dto/response/auth_response.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/dto/response/errorResponse.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/dto/response/error_response.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/handler/authHandler.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/migrations/20250923144752_create_users_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/migrations/20250923144752_create_users_table.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/model/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/model/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/repository/authRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/repository/user_repository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/repository/userRepository.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/router/authRouter.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/service/authService.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/service/auth_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/service/impl/authService.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/service/impl/auth_service_impl.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/service/impl/userService.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,34 +68,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
-    &quot;Go Build.go build user-service/cmd.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.GoLinterPluginOnboarding&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.GoLinterPluginStorageMigration&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/shadow473/GolandProjects/MarketShop/cmd/user-service&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/home/shadow473/GolandProjects/MarketShop/main.go&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "Go Build.go build user-service.executor": "Debug",
+    "Go Build.go build user-service/cmd.executor": "Run",
+    "Go Build.go build user_service_impl.go.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.GoLinterPluginOnboarding": "true",
+    "RunOnceActivity.GoLinterPluginStorageMigration": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "git-widget-placeholder": "master",
+    "go.import.settings.migrated": "true",
+    "last_opened_file_path": "/home/shadow473/goland_plugins/github-copilot-intellij-1.5.59-243.zip",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/home/shadow473/GolandProjects/MarketShop/main.go",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/cmd/user-service" />
@@ -115,16 +115,14 @@
       <recent name="$PROJECT_DIR$/cmd/user-service/cmd" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.user-service/Dockerfile">
-    <configuration name="go build user-service/cmd" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="MarketShop" />
-      <working_directory value="$PROJECT_DIR$/cmd/user-service" />
-      <kind value="PACKAGE" />
-      <package value="user-service/cmd" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/cmd/user-service/cmd/main.go" />
-      <method v="2" />
-    </configuration>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="GoApplicationRunConfiguration" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager">
     <configuration name="user-service/Dockerfile" type="docker-deploy" factoryName="dockerfile">
       <deployment type="dockerfile">
         <settings>
@@ -133,11 +131,6 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Go Build.go build user-service/cmd" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -177,7 +170,8 @@
     <MESSAGE value="created registration" />
     <MESSAGE value="created registration and docs(swagger)" />
     <MESSAGE value="added intefaces for service" />
-    <option name="LAST_COMMIT_MESSAGE" value="added intefaces for service" />
+    <MESSAGE value="refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

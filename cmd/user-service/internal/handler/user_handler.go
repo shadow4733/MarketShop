@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"context"
 	"net/http"
 	"user-service/internal/dto/request"
 	"user-service/internal/dto/response"
@@ -9,23 +10,23 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type AuthHandler struct {
-	authService service.AuthService
+type UserHandler struct {
+	userService service.UserService
 }
 
-// NewAuthHandler создает новый экземпляр AuthHandler
+// NewUserHandler создает новый экземпляр AuthHandler
 // @Summary Создает обработчик аутентификации
 // @Description Инициализирует обработчик с сервисом аутентификации
-func NewAuthHandler(authService service.AuthService) *AuthHandler {
-	return &AuthHandler{
-		authService: authService,
+func NewUserHandler(userService service.UserService) *UserHandler {
+	return &UserHandler{
+		userService: userService,
 	}
 }
 
-// Authorization обрабатывает запрос на регистрацию пользователя
+// CreateNewUser обрабатывает запрос на регистрацию пользователя
 // @Summary Регистрация пользователя
 // @Description Создает нового пользователя и возвращает JWT токен
-// @Tags auth
+// @Tags users
 // @Accept json
 // @Produce json
 // @Param registerRequest body request.RegisterRequest true "Данные для регистрации"
@@ -33,9 +34,10 @@ func NewAuthHandler(authService service.AuthService) *AuthHandler {
 // @Failure 400 {object} response.ErrorResponse "Неверные данные запроса"
 // @Failure 409 {object} response.ErrorResponse "Пользователь уже существует"
 // @Failure 500 {object} response.ErrorResponse "Внутренняя ошибка сервера"
-// @Router /auth/register [post]
-func (h *AuthHandler) Authorization(c *gin.Context) {
-	var req request.RegisterRequest
+// @Router /user/create [post]
+func (h *UserHandler) CreateNewUser(c *gin.Context) {
+	var ctx context.Context
+	var req request.Create
 
 	if err := c.ShouldBindJSON(&req); err != nil {
 		c.JSON(http.StatusBadRequest, response.ErrorResponse{
@@ -45,7 +47,7 @@ func (h *AuthHandler) Authorization(c *gin.Context) {
 		return
 	}
 
-	result, err := h.authService.Authorization(req)
+	result, err := h.userService.Create(ctx, &req)
 	if err != nil {
 		statusCode := http.StatusInternalServerError
 		if err.Error() == "пользователь с таким email уже существует" ||

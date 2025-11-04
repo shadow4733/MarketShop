@@ -7,14 +7,14 @@ import (
 	"user-service/internal/handler"
 )
 
-func SetupRouter(authHandler *handler.AuthHandler) *gin.Engine {
+func SetupRouter(userHandler *handler.UserHandler) *gin.Engine {
 	router := gin.Default()
 
 	v1 := router.Group("/api/v1")
 	{
-		authGroup := v1.Group("/auth")
+		authGroup := v1.Group("/user")
 		{
-			authGroup.POST("/register", authHandler.Authorization)
+			authGroup.POST("/create", userHandler.CreateNewUser)
 		}
 	}
 

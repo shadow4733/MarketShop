@@ -5,13 +5,12 @@ import (
 	"time"
 )
 
-// User represents a marketplace user entity.
 type User struct {
-	ID           uuid.UUID `json:"user_id" gorm:"type:uuid;primary_key"`
+	ID           uuid.UUID `json:"user_id" gorm:"type:uuid;column:user_id;primary_key"`
 	Username     string    `json:"username" gorm:"uniqueIndex;not null"`
 	Email        string    `json:"email" gorm:"uniqueIndex;not null"`
 	PasswordHash string    `json:"-" gorm:"not null"`
-	Phone        *string   `json:"phone" gorm:"index"`
+	Phone        string    `json:"phone" gorm:"index"`
 
 	// Financial information
 	Balance     float64 `json:"balance" gorm:"default:0"`
@@ -21,7 +20,7 @@ type User struct {
 	// Personal information
 	FirstName   string     `json:"first_name"`
 	LastName    string     `json:"last_name"`
-	MiddleName  *string    `json:"middle_name"`
+	MiddleName  string     `json:"middle_name"`
 	DateOfBirth *time.Time `json:"date_of_birth"`
 	AvatarURL   *string    `json:"avatar_url"`
 
