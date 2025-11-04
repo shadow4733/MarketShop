@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5303207b-d597-4ae4-aad1-023d5038a9bc" name="Changes" comment="refactor">
-      <change afterPath="$PROJECT_DIR$/cmd/user-service/internal/repository/auth_repository.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/user-service/internal/service/impl/user_service_impl.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9a54d25a-0bb7-4a5d-a498-b4460b4385ae.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9a54d25a-0bb7-4a5d-a498-b4460b4385ae.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/cmd/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/dto/request/authRequest.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/dto/request/auth_request.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/dto/response/authResponse.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/dto/response/auth_response.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/dto/response/errorResponse.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/dto/response/error_response.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/handler/authHandler.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/migrations/20250923144752_create_users_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/migrations/20250923144752_create_users_table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/model/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/model/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/repository/authRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/repository/user_repository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/repository/userRepository.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/router/authRouter.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/service/authService.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/service/auth_service.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/service/impl/authService.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/service/impl/auth_service_impl.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/service/impl/userService.go" beforeDir="false" />
-    </list>
+    <list default="true" id="5303207b-d597-4ae4-aad1-023d5038a9bc" name="Changes" comment="[feature]create new method for user" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -171,7 +150,8 @@
     <MESSAGE value="created registration and docs(swagger)" />
     <MESSAGE value="added intefaces for service" />
     <MESSAGE value="refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
+    <MESSAGE value="[feature]create new method for user" />
+    <option name="LAST_COMMIT_MESSAGE" value="[feature]create new method for user" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
