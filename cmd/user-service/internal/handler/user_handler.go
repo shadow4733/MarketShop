@@ -1,10 +1,10 @@
 package handler
 
 import (
-	"context"
 	"net/http"
 	"user-service/internal/dto/request"
 	"user-service/internal/dto/response"
+	"user-service/internal/handler/helpers"
 	"user-service/internal/service"
 
 	"github.com/gin-gonic/gin"
@@ -36,7 +36,6 @@ func NewUserHandler(userService service.UserService) *UserHandler {
 // @Failure 500 {object} response.ErrorResponse "Внутренняя ошибка сервера"
 // @Router /user/create [post]
 func (h *UserHandler) CreateNewUser(c *gin.Context) {
-	var ctx context.Context
 	var req request.Create
 
 	if err := c.ShouldBindJSON(&req); err != nil {
@@ -47,15 +46,9 @@ func (h *UserHandler) CreateNewUser(c *gin.Context) {
 		return
 	}
 
-	result, err := h.userService.Create(ctx, &req)
+	result, err := h.userService.Create(c.Request.Context(), &req)
 	if err != nil {
-		statusCode := http.StatusInternalServerError
-		if err.Error() == "пользователь с таким email уже существует" ||
-			err.Error() == "пользователь с таким username уже существует" {
-			statusCode = http.StatusConflict
-		}
-
-		c.JSON(statusCode, response.ErrorResponse{
+		c.JSON(helpers.GetStatusCode(err), response.ErrorResponse{
 			Error:   "Ошибка регистрации",
 			Message: err.Error(),
 		})
