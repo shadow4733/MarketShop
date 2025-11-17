@@ -5,26 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5303207b-d597-4ae4-aad1-023d5038a9bc" name="Changes" comment="[feature]create new method for user">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5a88336f-facb-4c25-a932-25e222b26794.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5a88336f-facb-4c25-a932-25e222b26794/storage_v2/_src_/database/user-service.s5o4hw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5a88336f-facb-4c25-a932-25e222b26794/storage_v2/_src_/database/user-service.s5o4hw/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5a88336f-facb-4c25-a932-25e222b26794/storage_v2/_src_/database/user-service.s5o4hw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5a88336f-facb-4c25-a932-25e222b26794/storage_v2/_src_/database/user-service.s5o4hw/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5a88336f-facb-4c25-a932-25e222b26794/storage_v2/_src_/database/user-service.s5o4hw/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/971750ba-358e-4d0b-a6ad-fc147a285511.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/971750ba-358e-4d0b-a6ad-fc147a285511/storage_v2/_src_/database/user-service.s5o4hw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/971750ba-358e-4d0b-a6ad-fc147a285511/storage_v2/_src_/database/user-service.s5o4hw/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/971750ba-358e-4d0b-a6ad-fc147a285511/storage_v2/_src_/database/user-service.s5o4hw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/971750ba-358e-4d0b-a6ad-fc147a285511/storage_v2/_src_/database/user-service.s5o4hw/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9a54d25a-0bb7-4a5d-a498-b4460b4385ae.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9a54d25a-0bb7-4a5d-a498-b4460b4385ae/storage_v2/_src_/database/user-service.s5o4hw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9a54d25a-0bb7-4a5d-a498-b4460b4385ae/storage_v2/_src_/database/user-service.s5o4hw/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9a54d25a-0bb7-4a5d-a498-b4460b4385ae/storage_v2/_src_/database/user-service.s5o4hw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9a54d25a-0bb7-4a5d-a498-b4460b4385ae/storage_v2/_src_/database/user-service.s5o4hw/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/34948315-2aef-4592-a380-a8e132a8e3d0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/34948315-2aef-4592-a380-a8e132a8e3d0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/34948315-2aef-4592-a380-a8e132a8e3d0/storage_v2/_src_/database/user-service.s5o4hw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/34948315-2aef-4592-a380-a8e132a8e3d0/storage_v2/_src_/database/user-service.s5o4hw/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/user-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/user-service/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/cmd/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/service/impl/user_service_impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/service/user_service_impl.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/service/user_service.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/dto/request/user_request.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/dto/request/user_request.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/dto/response/user_response.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/dto/response/user_response.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/handler/user_handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/handler/user_handler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/migrations/20250923144752_create_users_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/migrations/20250923144752_create_users_table.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/migrations/20251104141258_create_country_phone_format_table.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/model/country_phone_format.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/model/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/model/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/repository/country_phone_format_repository.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/service/user_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/service/user_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/user-service/internal/service/validation/validation.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user-service/internal/service/validation/validation.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +68,9 @@
     &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
     &quot;Go Build.go build user-service.executor&quot;: &quot;Debug&quot;,
     &quot;Go Build.go build user-service/cmd.executor&quot;: &quot;Run&quot;,
+    &quot;Go Build.go build user_handler.go.executor&quot;: &quot;Debug&quot;,
     &quot;Go Build.go build user_service_impl.go.executor&quot;: &quot;Debug&quot;,
+    &quot;Go Remote.goDebbug.executor&quot;: &quot;Debug&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.GoLinterPluginOnboarding&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.GoLinterPluginStorageMigration&quot;: &quot;true&quot;,
@@ -108,10 +105,10 @@
       <recent name="$PROJECT_DIR$/cmd/inventory-service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cmd/user-service/internal/migrations" />
       <recent name="$PROJECT_DIR$/cmd/user-service/internal/handler" />
       <recent name="$PROJECT_DIR$/cmd/user-service/internal/service/impl" />
       <recent name="$PROJECT_DIR$/cmd/user-service/internal/handler/impl" />
-      <recent name="$PROJECT_DIR$/cmd/user-service/internal/migrations" />
       <recent name="$PROJECT_DIR$/cmd/user-service/cmd" />
     </key>
   </component>
@@ -122,15 +119,48 @@
       </set>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="user-service/Dockerfile" type="docker-deploy" factoryName="dockerfile">
+  <component name="RunManager" selected="Go Remote.goDebbug">
+    <configuration name="go build user_handler.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="MarketShop" />
+      <working_directory value="$PROJECT_DIR$/cmd/user-service" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </EXTENSION>
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/cmd/user-service/internal/handler/user_handler.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="goDebbug" type="GoRemoteDebugConfigurationType" factoryName="Go Remote" port="40000">
+      <option name="disconnectOption" value="ASK" />
+      <method v="2" />
+    </configuration>
+    <configuration name="user-service/Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
       <deployment type="dockerfile">
         <settings>
+          <option name="containerName" value="" />
           <option name="sourceFilePath" value="cmd/user-service/Dockerfile" />
         </settings>
       </deployment>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Docker.user-service/Dockerfile" />
+      <item itemvalue="Go Build.go build user_handler.go" />
+      <item itemvalue="Go Remote.goDebbug" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build user_handler.go" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -176,5 +206,41 @@
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/cmd/user-service/internal/handler/user_handler.go</url>
+          <line>46</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/cmd/user-service/internal/handler/user_handler.go</url>
+          <line>48</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/cmd/user-service/internal/handler/user_handler.go</url>
+          <line>59</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/cmd/user-service/internal/service/user_service.go</url>
+          <line>53</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/cmd/user-service/internal/service/user_service.go</url>
+          <line>64</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/cmd/user-service/internal/service/user_service.go</url>
+          <line>57</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

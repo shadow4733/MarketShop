@@ -15,25 +15,15 @@ import (
 	"user-service/internal/service/validation"
 )
 
-type UserService interface {
-	GetByID(ctx context.Context, id uuid.UUID) (*model.User, error)
-	GetByUsername(ctx context.Context, username string) (*model.User, error)
-	GetByEmail(ctx context.Context, email string) (*model.User, error)
-	Create(ctx context.Context, data *request.Create) (*response.User, error)
-	Update(ctx context.Context, user *model.User) error
-	Delete(ctx context.Context, id uuid.UUID) error
-}
-
 type UserServiceImpl struct {
 	userRepo   *repository.UserRepository
 	db         *gorm.DB
 	validation *validation.UserValidation
 }
 
-func NewUserServiceImpl(db *gorm.DB) UserService {
+func NewUserServiceImpl(db *gorm.DB) *UserServiceImpl {
 	userRepo := repository.NewUserRepository(db)
-	countryRepo := repository.NewCountryPhoneRepository(db)
-	userValidation := validation.NewUserValidation(countryRepo)
+	userValidation := validation.NewUserValidation(userRepo)
 
 	return &UserServiceImpl{
 		userRepo:   userRepo,
@@ -72,7 +62,6 @@ func (u *UserServiceImpl) Create(ctx context.Context, data *request.Create) (*re
 		return nil, appErrors.ErrUsernameAlreadyExists
 	}
 
-	// Хэшируем пароль
 	hash, err := bcrypt.GenerateFromPassword([]byte(data.Password), bcrypt.DefaultCost)
 	if err != nil {
 		return nil, err

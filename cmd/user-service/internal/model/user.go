@@ -18,11 +18,11 @@ type User struct {
 	TotalEarned float64 `json:"total_earned" gorm:"default:0"`
 
 	// Personal information
-	FirstName   string     `json:"first_name"`
-	LastName    string     `json:"last_name"`
-	MiddleName  string     `json:"middle_name"`
-	DateOfBirth *time.Time `json:"date_of_birth"`
-	AvatarURL   *string    `json:"avatar_url"`
+	FirstName   string  `json:"first_name"`
+	LastName    string  `json:"last_name"`
+	MiddleName  string  `json:"middle_name"`
+	DateOfBirth string  `json:"date_of_birth"`
+	AvatarURL   *string `json:"avatar_url"`
 
 	// Address information
 	Country    string `json:"country"`

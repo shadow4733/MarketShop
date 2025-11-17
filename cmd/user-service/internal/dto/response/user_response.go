@@ -7,15 +7,15 @@ import (
 )
 
 type User struct {
-	ID          uuid.UUID  `json:"user_id" gorm:"type:uuid;primaryKey;default:gen_random_uuid()"`
-	Username    string     `json:"username"`
-	Email       string     `json:"email"`
-	Phone       string     `json:"phone,omitempty"`
-	FirstName   string     `json:"first_name,omitempty"`
-	LastName    string     `json:"last_name,omitempty"`
-	MiddleName  string     `json:"middle_name,omitempty"`
-	DateOfBirth *time.Time `json:"date_of_birth,omitempty"`
-	Balance     float64    `json:"balance"`
+	ID          uuid.UUID `json:"user_id" gorm:"type:uuid;primaryKey;default:gen_random_uuid()"`
+	Username    string    `json:"username"`
+	Email       string    `json:"email"`
+	Phone       string    `json:"phone,omitempty"`
+	FirstName   string    `json:"first_name,omitempty"`
+	LastName    string    `json:"last_name,omitempty"`
+	MiddleName  string    `json:"middle_name,omitempty"`
+	DateOfBirth string    `json:"date_of_birth,omitempty"`
+	Balance     float64   `json:"balance"`
 
 	Country    string `json:"country,omitempty"`
 	City       string `json:"city,omitempty"`

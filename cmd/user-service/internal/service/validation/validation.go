@@ -9,12 +9,12 @@ import (
 )
 
 type UserValidation struct {
-	countryRepo *repository.CountryPhoneRepository
+	userRepo *repository.UserRepository
 }
 
-func NewUserValidation(countryRepo *repository.CountryPhoneRepository) *UserValidation {
+func NewUserValidation(countryRepo *repository.UserRepository) *UserValidation {
 	return &UserValidation{
-		countryRepo: countryRepo,
+		userRepo: countryRepo,
 	}
 }
 
@@ -30,17 +30,14 @@ func (v *UserValidation) ValidateCreateRequest(ctx context.Context, req *request
 		return errors.New("password is required")
 	}
 
-	// Длина пароля
 	if len(req.Password) < 6 {
 		return errors.New("password must be at least 6 characters")
 	}
 
-	// Простая проверка email
 	if !strings.Contains(req.Email, "@") || !strings.Contains(req.Email, ".") {
 		return errors.New("invalid email format")
 	}
 
-	// Телефон опционален, но если указан - проверяем длину
 	if req.Phone != "" && len(req.Phone) < 5 {
 		return errors.New("phone number is too short")
 	}

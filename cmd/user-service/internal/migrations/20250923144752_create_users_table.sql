@@ -11,7 +11,7 @@ CREATE TABLE users (
     first_name VARCHAR(100),
     last_name VARCHAR(100),
     middle_name VARCHAR(100),
-    date_of_birth DATE,
+    date_of_birth VARCHAR(20),
     avatar_url TEXT,
     country VARCHAR(100),
     city VARCHAR(100),

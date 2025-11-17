@@ -1,23 +1,31 @@
 package handler
 
 import (
+	"context"
+	"github.com/google/uuid"
 	"net/http"
 	"user-service/internal/dto/request"
 	"user-service/internal/dto/response"
 	"user-service/internal/handler/helpers"
-	"user-service/internal/service"
+	"user-service/internal/model"
 
 	"github.com/gin-gonic/gin"
 )
 
-type UserHandler struct {
-	userService service.UserService
+type UserService interface {
+	GetByID(ctx context.Context, id uuid.UUID) (*model.User, error)
+	GetByUsername(ctx context.Context, username string) (*model.User, error)
+	GetByEmail(ctx context.Context, email string) (*model.User, error)
+	Create(ctx context.Context, data *request.Create) (*response.User, error)
+	Update(ctx context.Context, user *model.User) error
+	Delete(ctx context.Context, id uuid.UUID) error
 }
 
-// NewUserHandler создает новый экземпляр AuthHandler
-// @Summary Создает обработчик аутентификации
-// @Description Инициализирует обработчик с сервисом аутентификации
-func NewUserHandler(userService service.UserService) *UserHandler {
+type UserHandler struct {
+	userService UserService
+}
+
+func NewUserHandler(userService UserService) *UserHandler {
 	return &UserHandler{
 		userService: userService,
 	}
@@ -25,12 +33,12 @@ func NewUserHandler(userService service.UserService) *UserHandler {
 
 // CreateNewUser обрабатывает запрос на регистрацию пользователя
 // @Summary Регистрация пользователя
-// @Description Создает нового пользователя и возвращает JWT токен
+// @Description Создает нового пользователя
 // @Tags users
 // @Accept json
 // @Produce json
-// @Param registerRequest body request.RegisterRequest true "Данные для регистрации"
-// @Success 200 {object} response.RegisterResponse "Успешная регистрация"
+// @Param request body request.Create true "Данные для регистрации"
+// @Success 201 {object} response.User "Успешная регистрация"
 // @Failure 400 {object} response.ErrorResponse "Неверные данные запроса"
 // @Failure 409 {object} response.ErrorResponse "Пользователь уже существует"
 // @Failure 500 {object} response.ErrorResponse "Внутренняя ошибка сервера"
