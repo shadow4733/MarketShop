@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package proto;
+
+service CartService {
+  rpc GetCart(GetCartRequest) returns (CartResponse);
+  rpc AddItem(AddItemRequest) returns (CartResponse);
+  rpc UpdateItemQuantity(UpdateItemQuantityRequest) returns (CartResponse);
+  rpc RemoveItem(RemoveItemRequest) returns (CartResponse);
+  rpc RemoveItemQuantity(RemoveItemQuantityRequest) returns (CartResponse);
+  rpc ClearCart(ClearCartRequest) returns (CartResponse);
+  rpc CalculateTotal(CalculateTotalRequest) returns (CartResponse);
+}
+
+message CartItem {
+  string product_id = 1;
+  string name = 2;
+  int32 quantity = 3;
+  double price = 4;
+}
+
+message Cart {
+  string user_id = 1;
+  repeated CartItem items = 2;
+  double total = 3;
+  double tax = 4;
+}
+
+message GetCartRequest {
+  string user_id = 1;
+}
+
+message AddItemRequest {
+  string user_id = 1;
+  string product_id = 2;
+  int32 quantity = 3;
+}
+
+message UpdateItemQuantityRequest {
+  string user_id = 1;
+  string product_id = 2;
+  int32 quantity = 3;
+}
+
+message RemoveItemRequest {
+  string user_id = 1;
+  string product_id = 2;
+}
+
+message RemoveItemQuantityRequest {
+  string user_id = 1;
+  string product_id = 2;
+  int32 quantity = 3;
+}
+
+message ClearCartRequest {
+  string user_id = 1;
+}
+
+message CalculateTotalRequest {
+  string user_id = 1;
+}
+
+message CartResponse {
+  Cart cart = 1;
+}
