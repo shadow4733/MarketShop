@@ -16,6 +16,25 @@ services:
     depends_on:
       - user-service-db
 
+  user-service-debug:
+    build:
+      context: .
+      dockerfile: Dockerfile.debug
+    container_name: user-service-debug
+    ports:
+      - "8080:8080"
+      - "40000:40000"
+    environment:
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+      DB_SSLMODE: ${DB_SSLMODE}
+    depends_on:
+      - user-service-db
+    profiles: ["debug"]
+
   user-service-db:
     image: postgres:latest
     container_name: user-service-db

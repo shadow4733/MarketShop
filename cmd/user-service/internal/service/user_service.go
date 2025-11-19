@@ -9,7 +9,7 @@ import (
 	"user-service/internal/dto/request"
 	"user-service/internal/dto/response"
 	"user-service/internal/dto/response/mapper"
-	appErrors "user-service/internal/errors"
+	"user-service/internal/errors"
 	"user-service/internal/model"
 	"user-service/internal/repository"
 	"user-service/internal/service/validation"
@@ -57,9 +57,9 @@ func (u *UserServiceImpl) Create(ctx context.Context, data *request.Create) (*re
 	}
 	if existing != nil {
 		if existing.Email == data.Email {
-			return nil, appErrors.ErrEmailAlreadyExists
+			return nil, errors.ErrEmailAlreadyExists
 		}
-		return nil, appErrors.ErrUsernameAlreadyExists
+		return nil, errors.ErrUsernameAlreadyExists
 	}
 
 	hash, err := bcrypt.GenerateFromPassword([]byte(data.Password), bcrypt.DefaultCost)
