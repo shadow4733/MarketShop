@@ -30,9 +30,9 @@ func main() {
 
 	port := appCfg.Port
 
-	log.Printf("Документация Swagger: http://localhost:%s/swagger/index.html", port)
+	log.Printf("Swagger Documentation: http://localhost:%s/swagger/index.html", port)
 
 	if err := ginRouter.Run(":" + port); err != nil {
-		log.Fatal("Ошибка подключения к серверу: ", err)
+		log.Fatal("Error connecting to the server: ", err)
 	}
 }
