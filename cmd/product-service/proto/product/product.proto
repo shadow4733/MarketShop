@@ -9,6 +9,10 @@ service ProductService {
   rpc UpdateProduct(UpdateProductRequest) returns (ProductResponse);
   rpc DeleteProduct(DeleteProductRequest) returns (DeleteProductResponse);
   rpc SearchProducts(SearchProductsRequest) returns (ListProductsResponse);
+  rpc ApplyDiscount(ApplyDiscountRequest) returns (ProductResponse);
+  rpc AssignCategory(AssignCategoryRequest) returns (ProductResponse);
+  rpc CheckStock(CheckStockRequest) returns (CheckStockResponse);
+  rpc GetPopularProducts(GetPopularProductsRequest) returns (ListProductsResponse);
 }
 
 message Product {
@@ -16,6 +20,12 @@ message Product {
   string name = 2;
   string description = 3;
   double price = 4;
+  repeated string category_ids = 5;
+  int32 stock_quantity = 6;
+  double rating = 7;
+  double discount_percent = 8;
+  string created_at = 9;
+  string updated_at = 10;
 }
 
 message GetProductRequest {
@@ -65,4 +75,26 @@ message SearchProductsRequest {
   string sort_order = 5;
   double min_price = 6;
   double max_price = 7;
+}
+
+message ApplyDiscountRequest {
+  string product_id = 1;
+  double discount_percent = 2;
+}
+
+message AssignCategoryRequest {
+  string product_id = 1;
+  string category_id = 2;
+}
+
+message CheckStockRequest {
+  string product_id = 1;
+}
+
+message CheckStockResponse {
+  int32 quantity = 1;
+}
+
+message GetPopularProductsRequest {
+  int32 limit = 1;
 }

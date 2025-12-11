@@ -4,12 +4,18 @@ package proto;
 
 service CartService {
   rpc GetCart(GetCartRequest) returns (CartResponse);
+  rpc GetProductFromCart(GetProductRequest) returns (GetProductResponse);
   rpc AddItem(AddItemRequest) returns (CartResponse);
   rpc UpdateItemQuantity(UpdateItemQuantityRequest) returns (CartResponse);
   rpc RemoveItem(RemoveItemRequest) returns (CartResponse);
   rpc RemoveItemQuantity(RemoveItemQuantityRequest) returns (CartResponse);
   rpc ClearCart(ClearCartRequest) returns (CartResponse);
   rpc CalculateTotal(CalculateTotalRequest) returns (CartResponse);
+  rpc ApplyDiscount(ApplyDiscountRequest) returns (CartResponse);
+  rpc GetCartHistory(GetCartHistoryRequest) returns (GetCartHistoryResponse);
+  rpc CheckStock(CheckStockRequest) returns (CheckStockResponse);
+  rpc SaveCartForLater(SaveCartForLaterRequest) returns (CartResponse);
+  rpc Checkout(CheckoutRequest) returns (CheckoutResponse);
 }
 
 message CartItem {
@@ -63,4 +69,52 @@ message CalculateTotalRequest {
 
 message CartResponse {
   Cart cart = 1;
+}
+
+message ApplyDiscountRequest {
+  string user_id = 1;
+  string discount_code = 2;
+}
+
+message GetCartHistoryRequest {
+  string user_id = 1;
+}
+
+message GetCartHistoryResponse {
+  repeated Cart cart_snapshots = 1;
+}
+
+message CheckStockRequest {
+  string product_id = 1;
+  int32 quantity = 2;
+}
+
+message CheckStockResponse {
+  bool available = 1;
+  int32 available_quantity = 2;
+}
+
+message SaveCartForLaterRequest {
+  string user_id = 1;
+}
+
+message CheckoutRequest {
+  string user_id = 1;
+  string payment_method = 2;
+  string shipping_address = 3;
+}
+
+message CheckoutResponse {
+  string order_id = 1;
+  double total = 2;
+  string status = 3;
+}
+
+message GetProductRequest {
+  string user_id = 1;
+  string product_id = 2;
+}
+
+message GetProductResponse {
+  CartItem item = 1;
 }
